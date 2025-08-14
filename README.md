@@ -48,4 +48,4 @@ By the end of this project, learners should be able to:
 - Understand the purpose and structure of Git-Flow.
 - Identify the different branch types and their roles.
 - Apply Git-Flow in real-world collaborative development projects.
-- Manage feature development, hotfixes, and release cycles using Git best
+- Manage feature development, hotfixes, and release cycles using Git
