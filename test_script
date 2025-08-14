@@ -1,9 +1,22 @@
 #!/bin/bash
-files=$(find .  -type d -path "./.git" -prune  -o -type f -name "README.md" -print)
-echo "$files"
+missing_readme=false
 
-for i in {1..5}
-do
-    echo $i
+# Find all directories except .git
+for dir in $(find . -type d ! -path "./.git*" ); do
+    if [ ! -f "$dir/README.md" ]; then
+        echo "❌ No README.md found in $dir"
+        missing_readme=true
+    else
+        echo "✅ Found README.md in $dir"
+    fi
 done
+
+if [ "$missing_readme" = true ]; then
+    echo "Commit aborted. Please add README.md files."
+    exit 1
+fi
+
+exit 0
+
+
 
